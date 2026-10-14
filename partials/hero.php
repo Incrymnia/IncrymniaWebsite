@@ -18,10 +18,10 @@ $rank = static function (array $values): array {
     <div class="container hero__grid">
 
         <div class="hero__copy">
-            <h1>Custom PCs and storage servers, built by hand.</h1>
+            <h1>Custom PCs, Workstations and Servers</h1>
             <p class="lead">
-                Gaming rigs, study machines, workstations and NAS builds for home and small offices.
-                Every system is assembled, cable-managed and stress-tested before it leaves the bench.
+                Gaming rigs, study machines, workstations and server builds for personal use and small offices.
+                Every system is designed from the ground up and professionall assembled.
             </p>
             <div class="hero__actions">
                 <a class="btn btn-primary btn-lg" href="#quote">Get a quote</a>

@@ -8,7 +8,7 @@ $builds = $cfg['builds'];
         <div class="gallery-head">
             <div class="section-head section-head--tight">
                 <h2 id="gallery-title">Recent builds</h2>
-                <p>A look at the kinds of systems we put together. Select a build for the full spec.</p>
+                <p>A sneak peak behind closed doors of the systems we regularly assemble</p>
             </div>
 
             <div class="seg" role="group" aria-label="Filter builds by type" id="gallery-filter">

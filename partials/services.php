@@ -3,8 +3,8 @@
     <div class="container services">
         <div class="services__intro">
             <div class="section-head section-head--tight">
-                <h2 id="services-title">More than new builds</h2>
-                <p>Already have a computer, or need a server set up properly? We can help with that too.</p>
+                <h2 id="services-title">More than just Desktop and Server Systems</h2>
+                <p>Looking for a new computer but need something portable? We can also build your perfect Laptop.</p>
             </div>
 
             <div class="card card--ember promo">

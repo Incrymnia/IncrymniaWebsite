@@ -16,7 +16,7 @@ $nav  = [
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= e($site['name']) ?> | Custom gaming PCs, workstations and NAS builds</title>
+    <title><?= e($site['name']) ?> | Custom Gaming PCs, Powerful Workstations and Efficient Servers</title>
     <meta name="description" content="<?= e($site['description']) ?>">
     <meta name="theme-color" content="#10050a">
     <meta property="og:type" content="website">

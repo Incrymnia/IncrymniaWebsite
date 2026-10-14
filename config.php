@@ -15,33 +15,33 @@ return [
      * Business details
      * ---------------------------------------------------------------- */
     'site' => [
-        'name'        => 'Emberforge',                       // REPLACE with your business name
-        'tagline'     => 'Custom PCs and storage servers, built by hand.',
+        'name'        => 'Incrymnia',                       // REPLACE with your business name
+        'tagline'     => 'Professional Systems for Gaming, Workstations and Servers',
         'description' => 'Custom-built gaming PCs, study computers, workstations and NAS or storage servers. Assembled, cable-managed and stress-tested before delivery. Request a free quote.',
 
-        'email'       => 'hello@example.com',                // REPLACE – shown on the site
-        'quote_to'    => 'hello@example.com',                // REPLACE – where quote requests are emailed
-        'mail_from'   => 'no-reply@example.com',             // REPLACE – should be an address on your own domain
-        'phone'       => '[Phone number]',                   // REPLACE
-        'phone_href'  => '',                                 // REPLACE e.g. '+61400000000' (leave empty to hide the link)
-        'address'     => '[Street address, Suburb]',         // REPLACE
+        'email'       => 'incrymniapc@gmail.com',                // REPLACE – shown on the site
+        'quote_to'    => 'incrymniapc@gmail.com',                // REPLACE – where quote requests are emailed
+        'mail_from'   => 'incrymniapc@gmail.com',             // REPLACE – should be an address on your own domain
+        'phone'       => '0485673647',                   // REPLACE
+        'phone_href'  => '+0485673647',                                 // REPLACE e.g. '+61400000000' (leave empty to hide the link)
+        'address'     => '',         // REPLACE
         'hours'       => [
             ['Monday to Friday', '9:00 am to 5:30 pm'],
             ['Saturday',         '10:00 am to 2:00 pm'],
             ['Sunday',           'Closed'],
         ],
 
-        'reply_time'     => 'one business day',              // shown after a quote request is sent
-        'warranty_years' => 3,                               // REPLACE with your real warranty
-        'build_days'     => '5 to 7',                        // REPLACE with your real typical build time
+        'reply_time'     => 'one to two business days',              // shown after a quote request is sent
+        'warranty_years' => 1,                               // REPLACE with your real warranty
+        'build_days'     => '5 to 7 business days',                        // REPLACE with your real typical build time
     ],
 
     /* ------------------------------------------------------------------
      * Hero stats (REPLACE with real numbers, or delete the ones you don't want)
      * ---------------------------------------------------------------- */
     'stats' => [
-        ['value' => 350, 'suffix' => '+',     'label' => 'Systems built',          'note' => 'Gaming, study, workstation and storage'],
-        ['value' => 3,   'suffix' => ' yrs',  'label' => 'Warranty on every build', 'note' => 'Parts and labour'],
+        ['value' => 853, 'suffix' => '+',     'label' => 'Systems built',          'note' => 'Gaming, study, workstation and servers'],
+        ['value' => 1,   'suffix' => ' yrs',  'label' => 'Warranty on every build', 'note' => 'Parts and labour'],
         ['value' => 7,   'suffix' => ' days', 'label' => 'Typical build time',      'note' => 'From the day parts arrive'],
         ['value' => 24,  'suffix' => ' hrs',  'label' => 'Stress testing',          'note' => 'Before anything ships'],
     ],
@@ -69,7 +69,7 @@ return [
             'rows'    => [
                 ['Graphics card', 'Sized to your monitor and the games you play', 'High'],
                 ['Processor',     'Fast cores for steady frame rates',            'Medium'],
-                ['Memory',        '32 GB as a comfortable starting point',        'Medium'],
+                ['Memory',        '16 GB as a comfortable starting point',        'Medium'],
                 ['Case and cooling', 'Airflow first, lighting if you want it',    'Low'],
             ],
         ],
@@ -112,10 +112,10 @@ return [
             ],
         ],
         'storage' => [
-            'label'   => 'NAS and storage servers',
-            'short'   => 'Storage',
+            'label'   => 'Server and Rackmount Systems',
+            'short'   => 'Server',
             'icon'    => 'server',
-            'summary' => 'Home and small-office file servers, backup targets and media servers. Reliable drives, sensible RAID and low power draw for 24/7 running.',
+            'summary' => 'Home/small office and Enterprise Servers with efficient power draw for 24/7 running.',
             'points'  => [
                 'RAID, ZFS or Unraid, set up and documented',
                 'NAS-rated drives and optional 2.5G or 10G networking',
@@ -124,10 +124,10 @@ return [
             'focus'   => 'Drives and reliability come first. Power use and noise matter because it runs all day.',
             'profile' => [45, 5, 60, 100, 70],
             'rows'    => [
-                ['Drives',     'NAS-rated disks in RAID, ZFS or Unraid',      'High'],
-                ['Power draw', 'Efficient parts for 24/7 running',            'High'],
-                ['Network',    '2.5G or 10G ports for fast transfers',        'Medium'],
-                ['Memory',     'Sized to your pool, ECC optional',            'Medium'],
+                ['Processor',     'Up to dual cpu configurations for high level compute scenarios',      'High'],
+                ['Graphics', 'Up to 4 graphics cards for high level GPU or AI computing',            'High'],
+                ['Network',    'Up to 40Gbps Ports for high level of data transfer',        'High'],
+                ['Memory',     '64 GB and up with ECC for extra reliability',            'High'],
             ],
         ],
     ],
@@ -140,68 +140,28 @@ return [
      * ---------------------------------------------------------------- */
     'gallery' => [
         [
-            'title' => 'Ember Tower',
+            'title' => 'Asus Matrix 5090 Gaming PC',
             'type'  => 'gaming',
-            'spec'  => '8-core CPU, 16 GB graphics card, 32 GB DDR5, 2 TB NVMe',
-            'desc'  => 'A black and red build for 1440p high refresh rate gaming, with a tempered glass side panel and a tuned fan curve.',
+            'spec'  => '16-core cpu, 64GB DDR5, RTX 5090, 4 TB NVMe, Wi-Fi 7',
+            'desc'  => 'The most extreme computer ever built with the Asus Matrix RTX 5090 graphice card for the most overkill gaming experience.',
             'variant' => 0,
-            'image' => null,
+            'image' => "assets/img/matrix-5090.png",
         ],
         [
-            'title' => 'Study Silent',
-            'type'  => 'study',
-            'spec'  => '6-core CPU, 16 GB DDR4, 1 TB NVMe, Wi-Fi 6',
-            'desc'  => 'A small, near-silent tower for uni and home study. Quick to boot, sips power and fits under a desk.',
-            'variant' => 1,
-            'image' => null,
-        ],
-        [
-            'title' => 'Render Box',
+            'title' => 'Crimson Workstation',
             'type'  => 'workstation',
-            'spec'  => '16-core CPU, 64 GB DDR5, 12 GB GPU, 2 TB + 4 TB storage',
-            'desc'  => 'Built for video editing and 3D rendering, with a dual-radiator cooling loop and separate scratch and archive drives.',
-            'variant' => 2,
-            'image' => null,
-        ],
-        [
-            'title' => 'Home NAS, 4-bay',
-            'type'  => 'storage',
-            'spec'  => '4 x 8 TB NAS drives, RAID 5, 2.5G networking',
-            'desc'  => 'A quiet file and backup server for a household. Photos, documents and media in one place with automatic backups.',
+            'spec'  => '24-core CPU, 64 GB DDR4, 16 GB RX 9070 XT, 4 TB NVMe + 4 TB HDD storage',
+            'desc'  => 'Extreme Threadripper 3960X Workstation build for heavy loads in development and 3D rendering.',
             'variant' => 0,
-            'image' => null,
+            'image' => "assets/img/crimson-workstation.png",
         ],
         [
-            'title' => 'White Frost',
-            'type'  => 'gaming',
-            'spec'  => '12-core CPU, 20 GB graphics card, 32 GB DDR5, 2 TB NVMe',
-            'desc'  => 'An all-white 4K build with matching braided cables and low-noise fans.',
-            'variant' => 2,
-            'image' => null,
-        ],
-        [
-            'title' => 'Homework Hub',
-            'type'  => 'study',
-            'spec'  => '4-core CPU, 16 GB DDR4, 500 GB SSD, Wi-Fi',
-            'desc'  => 'A budget-friendly build for school, delivered with Windows, Office and a parental-control profile ready to go.',
-            'variant' => 3,
-            'image' => null,
-        ],
-        [
-            'title' => 'Dev and CAD Station',
-            'type'  => 'workstation',
-            'spec'  => '24-core CPU, 128 GB ECC memory, pro GPU, 4 TB NVMe',
-            'desc'  => 'A workstation for CAD, simulation and large builds, with ECC memory and a tool-less case for easy upgrades.',
-            'variant' => 1,
-            'image' => null,
-        ],
-        [
-            'title' => 'Backup and Media Server, 6-bay',
-            'type'  => 'storage',
-            'spec'  => '6 x 12 TB drives, ZFS, 10 GbE, UPS-ready',
-            'desc'  => 'A small-office server for shared files, nightly backups and media streaming, with remote access and user permissions configured.',
-            'variant' => 1,
-            'image' => null,
+            'title' => 'The Incriminator',
+            'type'  => 'server',
+            'spec'  => '32-core Epyc Server CPU, 512 GB DDR4 ECC, 16 GB RX 9070 XT, 8 x 10TB SAS HDD, Quad 10 Gb NIC',
+            'desc'  => 'An enterprise storage and virtualisation server featuring an AMD EPYC 7532 Server Processor with half a terrabyte of ECC memory for extreme workloads and 24/7 deployment.',
+            'variant' => 0,
+            'image' => "assets/img/the-incryminator-server-no-bg.png",
         ],
     ],
 
@@ -209,9 +169,9 @@ return [
      * Services
      * ---------------------------------------------------------------- */
     'services' => [
-        ['icon' => 'wrench',  'title' => 'Upgrades and repairs',      'text' => 'Faster storage, more memory, a new graphics card. We fit it, test it and tell you what we found.'],
+        ['icon' => 'wrench',  'title' => 'Upgrades and repairs',      'text' => 'Computer feel a bit slow? Want a new upgrade? We can do that for you!'],
         ['icon' => 'swap',    'title' => 'Data migration and setup',  'text' => 'We move your files from the old PC and install Windows or Linux, drivers and your everyday apps.'],
-        ['icon' => 'server',  'title' => 'Server and NAS setup',      'text' => 'RAID layout, network, backups, remote access and user permissions configured and written down.'],
+        ['icon' => 'server',  'title' => 'Servers and Rackmounts',      'text' => 'Servers built and tested for long-term deployment reliability.'],
         ['icon' => 'box',     'title' => 'Bring your own parts',      'text' => 'Already own some components? We check compatibility and build around them.'],
         ['icon' => 'users',   'title' => 'Business and school orders', 'text' => 'Matching desktops with imaging, labels and a single point of contact.'],
         ['icon' => 'shield',  'title' => 'Warranty and support',      'text' => '{warranty}-year warranty on builds, plus help by phone or email after handover.'],
@@ -221,22 +181,22 @@ return [
      * Process
      * ---------------------------------------------------------------- */
     'process' => [
-        ['title' => 'Tell us what you need', 'text' => 'Send the quote form or call. We ask what you run, your budget and where the computer will live.', 'tag' => 'Free'],
-        ['title' => 'Get a written quote',   'text' => 'You receive an itemised parts list with the reasoning, and a cheaper or faster option if it helps.', 'tag' => 'No obligation'],
-        ['title' => 'We build and test',     'text' => 'Assembly, cable management, BIOS and OS setup, then a {days} day build with a full stress test.', 'tag' => 'In the workshop'],
-        ['title' => 'Pickup or delivery',    'text' => 'We walk you through the system, hand over the paperwork and stay on call for questions.', 'tag' => 'Warranty starts'],
+        ['title' => 'Quote', 'text' => 'Get in contact with us today for an extensive evaluation of your needs and budget, to quote you the best system possible.', 'tag' => 'Free'],
+        ['title' => 'Order',   'text' => 'Once you place your order, we order the components from our suppliers to get your build started.', 'tag' => 'No obligation'],
+        ['title' => 'Build and Test',     'text' => 'Once all the components are ready, within {days} days, your computer will be professionally assembled and tested to ensure smooth operation.', 'tag' => 'In the workshop'],
+        ['title' => 'Gaming begins!',    'text' => 'Or workstation and server productivity. And yes we all know that your office/study machine is for "studying" ;)', 'tag' => 'Warranty starts'],
     ],
 
     /* ------------------------------------------------------------------
      * About
      * ---------------------------------------------------------------- */
     'standards' => [
-        ['title' => 'Honest recommendations', 'text' => 'We tell you when a cheaper part does the job and when it won’t.'],
-        ['title' => 'Standard parts',         'text' => 'No proprietary boards or power supplies, so upgrades and repairs stay simple.'],
-        ['title' => 'Tested before delivery', 'text' => 'Stress tests, temperature checks and a clean OS install before handover.'],
+        ['title' => 'Honest recommendations', 'text' => 'We will never upsell you on computers. We only recommend what is the best fit for your circumstances.'],
+        ['title' => 'Standard parts',         'text' => 'Unlike other system builders, we use standard, non proprietary components, so in a case of an upgrade, these components are not locked or bound to a specific computer.'],
+        ['title' => 'Tested before delivery', 'text' => 'All of our systems are stress tested intensively to ensure smooth operation and reliability before delivery.'],
         ['title' => 'Support after handover', 'text' => 'Questions, upgrades and warranty claims go to the people who built it.'],
     ],
-    'brands' => ['Intel', 'AMD', 'NVIDIA', 'ASUS', 'MSI', 'Gigabyte', 'Corsair', 'Noctua', 'Samsung', 'Seagate', 'Western Digital', 'Crucial'],
+    'brands' => ['Intel', 'AMD', 'NVIDIA', 'ASUS', 'MSI', 'Gigabyte', 'Corsair', 'Noctua', 'Samsung', 'Seagate', 'Western Digital', 'Crucial', 'Supermicro', 'Dynatron', 'Kingston'],
 
     /* ------------------------------------------------------------------
      * FAQ  ({warranty} and {days} are replaced from 'site' above)
@@ -247,15 +207,15 @@ return [
         ['q' => 'How much should I budget?',
          'a' => 'It depends on what you do with the machine. Tell us your budget and your use, and we’ll show you where the money is best spent. If your budget is too tight for what you want, we’ll say so and suggest what to change.'],
         ['q' => 'Can I supply my own parts?',
-         'a' => 'Yes. We check that everything works together first. Parts you supply are covered by their own manufacturer warranty, and we warranty our workmanship.'],
+         'a' => 'Yes. We can accommodate for this but we also need to check that everything works together first. Parts you supply are covered by their own manufacturer warranty, and we warranty our workmanship.'],
         ['q' => 'What warranty do I get?',
          'a' => 'Every build has a {warranty}-year warranty covering parts and labour, and individual components keep their manufacturer warranty. We will confirm the exact terms in your quote.'],
         ['q' => 'Do you install Windows, Linux or other software?',
-         'a' => 'Yes. We can install Windows or Linux, drivers and the apps you use, or leave the machine ready for you to set up. For servers we can install TrueNAS, Unraid, Proxmox or a plain Linux server.'],
-        ['q' => 'What is the difference between RAID and a backup?',
+         'a' => 'Yes we can install Windows, Linux or any other softwares that you require, but by default, our computers do not include an operating system.'],
+        ['q' => 'What sort of servers and workstations do you build?',
          'a' => 'RAID keeps a server running if a drive fails. It does not protect you from deletion, ransomware or fire. We recommend a second copy of important data, ideally off-site, and we can set that up for you.'],
-        ['q' => 'Can you upgrade or repair my current PC?',
-         'a' => 'Usually, yes. Include the make and model (or a photo of the specs) in the quote form and we’ll tell you what’s worth upgrading and what isn’t.'],
+        ['q' => 'Do you also build laptops as well as desktop computers?',
+         'a' => 'Yes we do build laptops, but we usually upgrade the memory and storage from a stock laptop configuration.'],
         ['q' => 'Do you deliver?',
          'a' => 'We offer local pickup and insured shipping. Systems are packed with the cooler and graphics card secured so they arrive ready to power on.'],
     ],

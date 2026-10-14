@@ -198,7 +198,7 @@ function build_art(string $type, int $variant, string $uid): string
         'gaming'      => 'Illustration of a gaming PC with a glass side panel',
         'study'       => 'Illustration of a compact study PC',
         'workstation' => 'Illustration of a workstation with liquid cooling',
-        'storage'     => 'Illustration of a multi-bay NAS storage server',
+        'server'     => 'Illustration of a specialised server system',
     ][$type] ?? 'Illustration of a custom PC build';
 
     $svg  = '<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' . e($label) . '">' . $defs;
@@ -231,7 +231,7 @@ function build_art(string $type, int $variant, string $uid): string
             $svg .= '<rect x="118" y="236" width="164" height="18" rx="5" fill="#1a0b11" stroke="' . $c1 . '" stroke-opacity=".2"/>';
             break;
 
-        case 'storage':
+        case 'server':
             $bays   = 4 + ($variant % 2) * 2;
             $top    = 78;
             $area   = 156;

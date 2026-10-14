@@ -3,7 +3,7 @@
     <div class="container">
         <div class="section-head">
             <h2 id="builds-title">What we build</h2>
-            <p>Four kinds of machine, each specified around how you will actually use it.</p>
+            <p>Four kinds of machines, each specified around how you will actually use it.</p>
         </div>
 
         <div class="builds">

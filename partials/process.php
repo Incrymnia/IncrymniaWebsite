@@ -2,8 +2,8 @@
 <section class="section" id="process" aria-labelledby="process-title">
     <div class="container">
         <div class="section-head">
-            <h2 id="process-title">How a build works</h2>
-            <p>From first message to handover, in four steps.</p>
+            <h2 id="process-title">Our Process</h2>
+            <p>From idea to execution, the four step process.</p>
         </div>
 
         <ol class="steps">

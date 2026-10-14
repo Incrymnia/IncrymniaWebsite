@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#ff5c3a"/><path fill="#fff" d="M33 11c1.6 9.5 12.5 14.5 12.5 26.5a13.5 13.5 0 0 1-27 0c0-5.5 2.7-9 5.6-11.8.3 5 2.4 6.9 4.3 7.4-1.3-7.4-1.9-15.2 4.6-22.1z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 -4 488 523" width="488" height="523" role="img" aria-label="Ember logo">
+  <defs>
+    <linearGradient id="stroke" gradientUnits="userSpaceOnUse" x1="258" y1="20" x2="258" y2="495">
+      <stop offset="0" stop-color="#FF6A45"/>
+      <stop offset="0.55" stop-color="#F0383F"/>
+      <stop offset="1" stop-color="#C8183A"/>
+    </linearGradient>
+    <linearGradient id="fill" gradientUnits="userSpaceOnUse" x1="258" y1="20" x2="258" y2="495">
+      <stop offset="0" stop-color="#FF6A45" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#C8183A" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <path d="M258 20 L478 142 L420 213 L297 140 L297 372 L420 292 L478 367 L258 495 L38 367 L98 292 L215 352 L215 140 L98 215 L38 142 Z"
+        fill="url(#fill)" stroke="url(#stroke)" stroke-width="32" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
