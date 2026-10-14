@@ -23,7 +23,7 @@ function asset(string $path): string
 function fill(string $text, array $site): string
 {
     return strtr($text, [
-        '{warranty}' => (string) $site['warranty_years'],
+        '{warranty}' => (string) $site['warranty_months'],
         '{days}'     => (string) $site['build_days'],
     ]);
 }
@@ -157,7 +157,22 @@ function icon(string $name, string $class = 'icon'): string
 /** Brand mark: a flame on the ember tile. */
 function logo_mark(): string
 {
-    return '<span class="logo__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.200 2.500c.6 3.600 4.800 5.500 4.800 10.200a5 5 0 0 1-10 0c0-2.100 1-3.400 2.100-4.500.1 1.900.9 2.600 1.600 2.800-.5-2.800-.7-5.700 1.500-8.500z"/></svg></span>';
+    return '<span class="logo__mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="14 -4 488 523" width="488" height="523" role="img" aria-label="Ember logo">
+                                                          <defs>
+                                                            <linearGradient id="stroke" gradientUnits="userSpaceOnUse" x1="258" y1="20" x2="258" y2="495">
+                                                              <stop offset="0" stop-color="#FF6A45"/>
+                                                              <stop offset="0.55" stop-color="#F0383F"/>
+                                                              <stop offset="1" stop-color="#C8183A"/>
+                                                            </linearGradient>
+                                                            <linearGradient id="fill" gradientUnits="userSpaceOnUse" x1="258" y1="20" x2="258" y2="495">
+                                                              <stop offset="0" stop-color="#FF6A45" stop-opacity="0.22"/>
+                                                              <stop offset="1" stop-color="#C8183A" stop-opacity="0.12"/>
+                                                            </linearGradient>
+                                                          </defs>
+                                                          <path d="M258 20 L478 142 L420 213 L297 140 L297 372 L420 292 L478 367 L258 495 L38 367 L98 292 L215 352 L215 140 L98 215 L38 142 Z"
+                                                                fill="url(#fill)" stroke="url(#stroke)" stroke-width="32" stroke-linejoin="round" stroke-linecap="round"/>
+                                                        </svg>
+</span>';
 }
 
 /* ----------------------------------------------------------------------

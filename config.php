@@ -23,8 +23,8 @@ return [
         'quote_to'    => 'incrymniapc@gmail.com',                // REPLACE – where quote requests are emailed
         'mail_from'   => 'incrymniapc@gmail.com',             // REPLACE – should be an address on your own domain
         'phone'       => '0485673647',                   // REPLACE
-        'phone_href'  => '+0485673647',                                 // REPLACE e.g. '+61400000000' (leave empty to hide the link)
-        'address'     => '',         // REPLACE
+        'phone_href'  => '+610485673647',                                 // REPLACE e.g. '+61400000000' (leave empty to hide the link)
+        'address'     => 'Central and South East Melbourne',         // REPLACE
         'hours'       => [
             ['Monday to Friday', '9:00 am to 5:30 pm'],
             ['Saturday',         '10:00 am to 2:00 pm'],
@@ -32,7 +32,7 @@ return [
         ],
 
         'reply_time'     => 'one to two business days',              // shown after a quote request is sent
-        'warranty_years' => 1,                               // REPLACE with your real warranty
+        'warranty_months' => 18,                               // REPLACE with your real warranty
         'build_days'     => '5 to 7 business days',                        // REPLACE with your real typical build time
     ],
 
@@ -40,8 +40,8 @@ return [
      * Hero stats (REPLACE with real numbers, or delete the ones you don't want)
      * ---------------------------------------------------------------- */
     'stats' => [
-        ['value' => 853, 'suffix' => '+',     'label' => 'Systems built',          'note' => 'Gaming, study, workstation and servers'],
-        ['value' => 1,   'suffix' => ' yrs',  'label' => 'Warranty on every build', 'note' => 'Parts and labour'],
+        ['value' => 800, 'suffix' => '+',     'label' => 'Systems built',          'note' => 'Experience with Gaming, study, workstation and servers'],
+        ['value' => 18,   'suffix' => ' mths',  'label' => 'Warranty on every build', 'note' => 'Parts and labour'],
         ['value' => 7,   'suffix' => ' days', 'label' => 'Typical build time',      'note' => 'From the day parts arrive'],
         ['value' => 24,  'suffix' => ' hrs',  'label' => 'Stress testing',          'note' => 'Before anything ships'],
     ],
@@ -51,7 +51,7 @@ return [
      * profile: relative weighting (0-100) for CPU, GPU, Memory, Storage, Quiet
      * rows:    [component, note, priority (High|Medium|Low)]
      * ---------------------------------------------------------------- */
-    'profile_labels' => ['CPU', 'GPU', 'Memory', 'Storage', 'Quiet'],
+    'profile_labels' => ['CPU', 'GPU', 'Memory', 'Storage', 'Networking'],
 
     'builds' => [
         'gaming' => [
@@ -70,7 +70,7 @@ return [
                 ['Graphics card', 'Sized to your monitor and the games you play', 'High'],
                 ['Processor',     'Fast cores for steady frame rates',            'Medium'],
                 ['Memory',        '16 GB as a comfortable starting point',        'Medium'],
-                ['Case and cooling', 'Airflow first, lighting if you want it',    'Low'],
+                ['Case and cooling', 'Quiet cooling with additional RGB lighting',    'Low'],
             ],
         ],
         'study' => [
@@ -84,12 +84,12 @@ return [
                 'Wi-Fi, Office and parental controls set up',
             ],
             'focus'   => 'Fast storage and quiet running matter more than raw power.',
-            'profile' => [40, 15, 40, 55, 90],
+            'profile' => [40, 25, 50, 55, 40],
             'rows'    => [
                 ['Storage',   'A fast SSD makes everything feel quicker',     'High'],
-                ['Noise',     'Quiet fans for shared rooms',                  'High'],
+                ['Memory',     'High memory to assist with multitasking',                  'Medium'],
                 ['Processor', 'Plenty for office, browsers and video calls',  'Medium'],
-                ['Graphics',  'Built-in graphics are usually enough',         'Low'],
+                ['Graphics',  'Built-in graphics or a discrete graphics card for graphical performance',         'Low'],
             ],
         ],
         'workstation' => [
@@ -103,7 +103,7 @@ return [
                 'ECC memory and pro GPUs where they matter',
             ],
             'focus'   => 'Cores and memory come first, so exports and compiles finish sooner.',
-            'profile' => [95, 75, 95, 85, 60],
+            'profile' => [95, 75, 95, 85, 75],
             'rows'    => [
                 ['Processor', 'High core count for renders and compiles',    'High'],
                 ['Memory',    '64 GB and up, ECC where it matters',          'High'],
@@ -111,18 +111,18 @@ return [
                 ['Storage',   'Fast scratch NVMe plus bulk drives',          'Medium'],
             ],
         ],
-        'storage' => [
+        'server' => [
             'label'   => 'Server and Rackmount Systems',
             'short'   => 'Server',
             'icon'    => 'server',
             'summary' => 'Home/small office and Enterprise Servers with efficient power draw for 24/7 running.',
             'points'  => [
-                'RAID, ZFS or Unraid, set up and documented',
-                'NAS-rated drives and optional 2.5G or 10G networking',
-                'Backups, remote access and user permissions',
+                'Up to Dual CPU configurations for high computational loads.',
+                'Up to 4 graphics cards for GPU/AI Compute workloads.',
+                'High memory and storage with exceptional networking capabilities.',
             ],
             'focus'   => 'Drives and reliability come first. Power use and noise matter because it runs all day.',
-            'profile' => [45, 5, 60, 100, 70],
+            'profile' => [100, 80, 95, 90, 90],
             'rows'    => [
                 ['Processor',     'Up to dual cpu configurations for high level compute scenarios',      'High'],
                 ['Graphics', 'Up to 4 graphics cards for high level GPU or AI computing',            'High'],
@@ -181,10 +181,10 @@ return [
      * Process
      * ---------------------------------------------------------------- */
     'process' => [
-        ['title' => 'Quote', 'text' => 'Get in contact with us today for an extensive evaluation of your needs and budget, to quote you the best system possible.', 'tag' => 'Free'],
-        ['title' => 'Order',   'text' => 'Once you place your order, we order the components from our suppliers to get your build started.', 'tag' => 'No obligation'],
-        ['title' => 'Build and Test',     'text' => 'Once all the components are ready, within {days} days, your computer will be professionally assembled and tested to ensure smooth operation.', 'tag' => 'In the workshop'],
-        ['title' => 'Gaming begins!',    'text' => 'Or workstation and server productivity. And yes we all know that your office/study machine is for "studying" ;)', 'tag' => 'Warranty starts'],
+        ['title' => 'Quote', 'text' => 'Get in contact with us today for an extensive evaluation of your needs and budget, to quote you the best system possible.', 'tag' => 'Free Quote'],
+        ['title' => 'Order',   'text' => 'Once you place your order, we order the components from our suppliers to get your build started.', 'tag' => 'Parts ordered from Suppliers'],
+        ['title' => 'Build and Test',     'text' => 'Once all the components are ready, within {days} days, your computer will be professionally assembled and tested to ensure smooth operation.', 'tag' => 'The building commences'],
+        ['title' => 'Gaming begins!',    'text' => 'Or workstation and server productivity. And yes we all know that your office/study machine is for "studying" ;)', 'tag' => 'Pickup or Delivery'],
     ],
 
     /* ------------------------------------------------------------------
