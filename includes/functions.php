@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/smtp.php';
+
 /* ----------------------------------------------------------------------
  * Output helpers
  * -------------------------------------------------------------------- */
@@ -87,10 +89,76 @@ function save_quote(array $record): bool
     return @file_put_contents($dir . '/quotes.jsonl', $line . PHP_EOL, FILE_APPEND | LOCK_EX) !== false;
 }
 
-function send_quote_mail(array $site, array $r, string $buildLabel, array $budgets, array $timelines, array $extras): bool
+/** Append a line to storage/mail.log (private, never shown to visitors). */
+function log_mail(string $message): void
 {
-    $subject = 'New quote request: ' . $buildLabel . ' from ' . $r['name'] . ' (' . $r['ref'] . ')';
-    $subject = '=?UTF-8?B?' . base64_encode(clean_line($subject)) . '?=';
+    $dir = dirname(__DIR__) . '/storage';
+    if (is_dir($dir)) {
+        @file_put_contents($dir . '/mail.log', '[' . date('c') . '] ' . $message . PHP_EOL, FILE_APPEND | LOCK_EX);
+    }
+}
+
+/** True when SMTP credentials have been filled in (config.local.php). */
+function smtp_configured(array $smtp): bool
+{
+    return !empty($smtp['enabled'])
+        && (string) ($smtp['username'] ?? '') !== ''
+        && (string) ($smtp['password'] ?? '') !== '';
+}
+
+/**
+ * Send a plain-text email. Uses Gmail/SMTP when configured, otherwise falls
+ * back to PHP mail() (which usually does nothing on a local machine).
+ * Returns the SmtpMailer transcript through $debug for the test tool.
+ */
+function deliver_mail(array $cfg, string $to, string $replyEmail, string $replyName, string $subject, string $body, ?array &$debug = null): bool
+{
+    $site = $cfg['site'];
+    $smtp = $cfg['smtp'] ?? [];
+
+    if (smtp_configured($smtp)) {
+        $mailer = new SmtpMailer($smtp);
+        // Gmail only lets you send as the account you log in with, so From = that account.
+        $ok = $mailer->send(
+            (string) $smtp['username'],
+            clean_line($site['name']),
+            $to,
+            $replyEmail,
+            $replyName,
+            $subject,
+            $body
+        );
+        $debug = $mailer->transcript;
+        if (!$ok) {
+            log_mail('SMTP failed: ' . $mailer->error);
+        }
+        return $ok;
+    }
+
+    log_mail('SMTP is not configured (see config.local.php). Falling back to PHP mail(), which often fails on local machines.');
+
+    $headers = [
+        'From: ' . clean_line($site['name']) . ' <' . clean_line($site['mail_from']) . '>',
+        'Reply-To: ' . clean_line($replyEmail),
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+    ];
+    $encodedSubject = '=?UTF-8?B?' . base64_encode(clean_line($subject)) . '?=';
+    $ok = @mail($to, $encodedSubject, $body, implode("\r\n", $headers));
+    if (!$ok) {
+        log_mail('PHP mail() failed.');
+    }
+    return $ok;
+}
+
+function send_quote_mail(array $cfg, array $r, string $buildLabel): bool
+{
+    $budgets   = $cfg['quote']['budgets'];
+    $timelines = $cfg['quote']['timelines'];
+    $extras    = $cfg['quote']['extras'];
+
+    $shortName = mb_substr($r['name'], 0, 40);
+    $subject   = 'New quote request: ' . $buildLabel . ' from ' . $shortName . ' (' . $r['ref'] . ')';
 
     $extraLabels = [];
     foreach ($r['extras'] as $key) {
@@ -106,18 +174,10 @@ function send_quote_mail(array $site, array $r, string $buildLabel, array $budge
     $body .= 'Budget:    ' . ($budgets[$r['budget']] ?? '-') . "\n";
     $body .= 'Timeline:  ' . ($timelines[$r['timeline']] ?? '-') . "\n";
     $body .= 'Extras:    ' . ($extraLabels ? implode(', ', $extraLabels) : '-') . "\n\n";
-    $body .= "Details\n" . str_repeat('-', 40) . "\n{$r['message']}\n";
+    $body .= "Details\n" . str_repeat('-', 40) . "\n{$r['message']}\n\n";
+    $body .= "Reply to this email to answer the customer directly.\n";
 
-    $fromName = clean_line($site['name']);
-    $headers  = [
-        'From: =?UTF-8?B?' . base64_encode($fromName) . '?= <' . clean_line($site['mail_from']) . '>',
-        'Reply-To: ' . clean_line($r['email']),
-        'MIME-Version: 1.0',
-        'Content-Type: text/plain; charset=UTF-8',
-        'X-Mailer: PHP/' . PHP_VERSION,
-    ];
-
-    return @mail($site['quote_to'], $subject, $body, implode("\r\n", $headers));
+    return deliver_mail($cfg, (string) $cfg['site']['quote_to'], $r['email'], $r['name'], $subject, $body);
 }
 
 /* ----------------------------------------------------------------------

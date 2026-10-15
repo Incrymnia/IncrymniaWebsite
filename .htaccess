@@ -1,6 +1,6 @@
-# Apache: serve index.php by default and block the config file
+# Apache: serve index.php by default and block private config files
 DirectoryIndex index.php
-<Files "config.php">
+<FilesMatch "^config(\.local|\.local\.example)?\.php$">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>
@@ -8,5 +8,5 @@ DirectoryIndex index.php
         Order allow,deny
         Deny from all
     </IfModule>
-</Files>
+</FilesMatch>
 Options -Indexes

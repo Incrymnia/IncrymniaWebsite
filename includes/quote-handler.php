@@ -117,7 +117,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST' && ($_POST['action'] ?? '')
         $buildLabel = $old['build'] === 'other' ? 'Something else' : $buildOpts[$old['build']]['label'];
 
         $saved  = save_quote($record);
-        $mailed = send_quote_mail($site, $record, $buildLabel, $budgets, $timelines, $extrasOpts);
+        $mailed = send_quote_mail($cfg, $record, $buildLabel);
 
         if ($saved || $mailed) {
             $times[] = time();

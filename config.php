@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-return [
+$config = [
 
     /* ------------------------------------------------------------------
      * Business details
@@ -34,6 +34,22 @@ return [
         'reply_time'     => 'one to two business days',              // shown after a quote request is sent
         'warranty_months' => 18,                               // REPLACE with your real warranty
         'build_days'     => '5 to 7 business days',                        // REPLACE with your real typical build time
+    ],
+
+    /* ------------------------------------------------------------------
+     * Email delivery (Gmail SMTP)
+     * Do NOT put the password here. Copy config.local.example.php to
+     * config.local.php and fill it in there (that file is kept private).
+     * ---------------------------------------------------------------- */
+    'smtp' => [
+        'enabled'     => true,
+        'host'        => 'smtp.gmail.com',
+        'port'        => 465,
+        'encryption'  => 'ssl',            // 'ssl' with port 465, or 'tls' with port 587
+        'username'    => '',               // set in config.local.php
+        'password'    => '',               // set in config.local.php (Gmail App Password)
+        'verify_peer' => true,
+        'timeout'     => 12,
     ],
 
     /* ------------------------------------------------------------------
@@ -246,3 +262,14 @@ return [
         ],
     ],
 ];
+
+/* Private overrides (SMTP login etc.) live in config.local.php, which is never committed or served. */
+$localFile = __DIR__ . '/config.local.php';
+if (is_file($localFile)) {
+    $local = require $localFile;
+    if (is_array($local)) {
+        $config = array_replace_recursive($config, $local);
+    }
+}
+
+return $config;

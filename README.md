@@ -30,8 +30,7 @@ The gallery ships with illustrated sample entries. To use real photos, add a 4:3
 
 - Validates on the client (JS) and again on the server (PHP)
 - Saves every request to `storage/quotes.jsonl` (one JSON object per line)
-- Emails the request using PHP `mail()`; your host needs mail configured. If you prefer SMTP,
-  swap `send_quote_mail()` in `includes/functions.php` for PHPMailer or your provider's API
+- Emails the request through Gmail SMTP (see "Email setup" below); no Composer or extra libraries needed
 - Spam protection: CSRF token, hidden honeypot field, minimum fill time and a per-session rate limit
 - Post/Redirect/Get, so refreshing never re-submits
 
@@ -58,3 +57,27 @@ privacy policy page before going live.
 
 Colours live in `:root` at the top of `assets/css/style.css`
 (`--bg`, `--crimson`, `--ember`, ...). Font is Space Grotesk via Google Fonts, with a system fallback.
+
+
+## Email setup (Gmail)
+
+Quote requests are sent from your Gmail account to `quote_to` in `config.php`. The customer's address is set as
+Reply-To, so hitting Reply in Gmail answers them directly.
+
+1. Sign in to the Gmail account that will send the emails and turn on 2-Step Verification.
+2. Go to https://myaccount.google.com/apppasswords and create an App Password (16 letters).
+3. Copy `config.local.example.php` to `config.local.php` and paste the App Password in.
+   `config.local.php` is private: blocked in `.htaccess` and ignored by git.
+4. Test it from a terminal in the project folder:
+
+        php tools/test-mail.php
+
+   It prints each step and tells you if something is wrong. Then submit the real form once.
+
+Troubleshooting:
+
+- **"Gmail rejected the login"**: you need an App Password, not your normal password.
+- **Certificate or SSL error on Windows**: enable `extension=openssl` in `php.ini` and set
+  `openssl.cafile` to a CA bundle (download `cacert.pem` from curl.se/docs/caextract.html).
+- **Connection timeout**: your network blocks port 465. Set `'port' => 587` and `'encryption' => 'tls'`.
+- **Nothing arrives**: check Spam, then `storage/mail.log`. Quotes are always saved to `storage/quotes.jsonl` too.

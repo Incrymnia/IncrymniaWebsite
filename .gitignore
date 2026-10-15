@@ -21,3 +21,8 @@ cabal.project.local
 cabal.project.local~
 .HTF/
 .ghc.environment.*
+
+# Private config and runtime data
+config.local.php
+storage/*.jsonl
+storage/*.log
