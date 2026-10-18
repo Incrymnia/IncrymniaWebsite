@@ -21,13 +21,14 @@ if (isset(LEGACY_REDIRECTS[$slug])) {
     exit;
 }
 
+$route    = $slug;   // fixed here: partials share this scope and must not be able to change it
 $fillText = static fn (string $s): string => fill($s, $site);
 $isHome   = false;
 
 /* ------------------------------------------------------------------
  * Static pages
  * ---------------------------------------------------------------- */
-if (in_array($slug, STATIC_PAGES, true)) {
+if (in_array($route, STATIC_PAGES, true)) {
     $meta      = (array) ($cfg['pages'][$slug] ?? []);
     $staticSlug = $slug;
     $hasQuote  = $slug === 'contact';
@@ -53,7 +54,7 @@ if (in_array($slug, STATIC_PAGES, true)) {
     include __DIR__ . '/partials/header.php';
     include __DIR__ . '/partials/page-head.php';
 
-    switch ($slug) {
+    switch ($route) {
         case 'gallery':
             $galleryHeading = 'All builds';
             $galleryIntro   = 'Select any build to see the full specification.';
@@ -74,7 +75,7 @@ if (in_array($slug, STATIC_PAGES, true)) {
             break;
     }
 
-    if ($slug !== 'contact') {
+    if (!$hasQuote) {
         include __DIR__ . '/partials/cta.php';
     }
     include __DIR__ . '/partials/footer.php';

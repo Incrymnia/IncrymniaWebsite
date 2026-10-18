@@ -24,11 +24,12 @@ $navLinks = [
     'contact'  => 'Contact',
 ];
 $buildLinks = [];
-foreach ($cfg['builds'] as $bKey => $bItem) {
-    if (!empty($bItem['slug'])) {
-        $buildLinks[(string) $bItem['slug']] = (string) $bItem['label'];
+foreach ($cfg['builds'] as $navBuildKey => $navBuild) {
+    if (!empty($navBuild['slug'])) {
+        $buildLinks[(string) $navBuild['slug']] = (string) $navBuild['label'];
     }
 }
+unset($navBuildKey, $navBuild);
 
 $analytics = (string) ($seo['analytics_id'] ?? '');
 $analyticsOk = (bool) preg_match('/^G-[A-Z0-9]{6,14}$/', $analytics);
@@ -104,13 +105,13 @@ $analyticsOk = (bool) preg_match('/^G-[A-Z0-9]{6,14}$/', $analytics);
                         Builds <?= icon('chevron', 'icon nav__chevron') ?>
                     </button>
                     <ul class="nav__sub" id="nav-builds">
-                        <?php foreach ($buildLinks as $slug => $label): ?>
-                            <li><a href="<?= e(url($slug . '/')) ?>"<?= (string) ($page['slug'] ?? '') === $slug ? ' aria-current="page"' : '' ?>><?= e($label) ?></a></li>
+                        <?php foreach ($buildLinks as $navSlug => $navLabel): ?>
+                            <li><a href="<?= e(url($navSlug . '/')) ?>"<?= (string) ($page['slug'] ?? '') === $navSlug ? ' aria-current="page"' : '' ?>><?= e($navLabel) ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </li>
-                <?php foreach ($navLinks as $slug => $label): ?>
-                    <li><a href="<?= e(url($slug . '/')) ?>"<?= $current === $slug ? ' class="is-active" aria-current="page"' : '' ?>><?= e($label) ?></a></li>
+                <?php foreach ($navLinks as $navSlug => $navLabel): ?>
+                    <li><a href="<?= e(url($navSlug . '/')) ?>"<?= $current === $navSlug ? ' class="is-active" aria-current="page"' : '' ?>><?= e($navLabel) ?></a></li>
                 <?php endforeach; ?>
             </ul>
             <a class="btn btn-primary nav__cta-mobile" href="<?= e($quoteHref) ?>">Get a quote</a>

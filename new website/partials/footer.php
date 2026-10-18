@@ -66,7 +66,7 @@ $areas = array_values(array_filter((array) ($site['service_areas'] ?? []), 'is_s
     </div>
 
     <div class="container footer__base">
-        <p>&copy; <?= date('Y') ?> <?= e($site['name']) ?>. All rights reserved.</p>
+        <p>&copy; <?= date('Y') ?> <?= e($site['name']) ?>. All rights reserved. - ABN: 37 807 541 901</p>
         <a class="to-top" href="#top"><?= icon('up') ?> Back to top</a>
     </div>
 </footer>

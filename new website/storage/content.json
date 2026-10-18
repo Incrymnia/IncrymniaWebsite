@@ -1,0 +1,49 @@
+{
+    "seo": {
+        "title": "Incrymnia Computers | Custom PC Builder in Melbourne",
+        "description": "Incrymnia builds custom gaming PCs, workstations, study computers and servers in Melbourne. Hand-built, stress-tested and backed by an {warranty}-month warranty",
+        "og_image": "",
+        "google_verification": "9DDVI9TQeuj-DXMq8VBwVxUBAnFhYvvsG0DJfLD3Xbg",
+        "bing_verification": "",
+        "analytics_id": "G-TB5H9JT3WN",
+        "noindex": false,
+        "redirect_to_canonical": true
+    },
+    "pages": {
+        "gallery": {
+            "label": "Gallery",
+            "title": "Custom PC Build Gallery in Melbourne | Incrymnia",
+            "description": "Photos and full specs of custom gaming PCs, workstations, office computers and servers built by Incrymnia in Melbourne.",
+            "h1": "Gallery of custom PC builds",
+            "intro": "Photos and specs of systems we have designed and built. Filter by type, or open any build for the full details."
+        },
+        "services": {
+            "label": "Services",
+            "title": "Computer Building Services in Melbourne | Incrymnia",
+            "description": "Custom computer building, upgrades, repairs, data migration and server setup in Melbourne. See how an Incrymnia build works from quote to delivery.",
+            "h1": "Computer building services in Melbourne",
+            "intro": "Everything we offer beyond a standard build, and how a project works from your first message to handover."
+        },
+        "about": {
+            "label": "About us",
+            "title": "About Incrymnia | Custom PC Builders in Melbourne",
+            "description": "Meet Incrymnia, a small Melbourne workshop designing and building gaming PCs, workstations, office computers and servers to order.",
+            "h1": "About Incrymnia",
+            "intro": "A small workshop that designs every computer around what the person using it actually needs."
+        },
+        "faq": {
+            "label": "FAQ",
+            "title": "Custom PC Building FAQ | Incrymnia Melbourne",
+            "description": "Answers to common questions about custom PC builds, warranty, build times, parts, upgrades and servers from Incrymnia in Melbourne.",
+            "h1": "Frequently asked questions",
+            "intro": "Quick answers about custom builds, warranty and how we work."
+        },
+        "contact": {
+            "label": "Contact",
+            "title": "Get a Free Quote | Contact Incrymnia Melbourne",
+            "description": "Request a free quote for a custom gaming PC, workstation, office computer or server from Incrymnia in Melbourne.",
+            "h1": "Contact us and get a free quote",
+            "intro": "Tell us what you need and we will reply with an itemised quote and a recommendation."
+        }
+    }
+}
