@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 -4 488 523" width="488" height="523" role="img" aria-label="Ember logo">
+  <defs>
+    <linearGradient id="stroke" gradientUnits="userSpaceOnUse" x1="258" y1="20" x2="258" y2="495">
+      <stop offset="0" stop-color="#FF6A45"/>
+      <stop offset="0.55" stop-color="#F0383F"/>
+      <stop offset="1" stop-color="#C8183A"/>
+    </linearGradient>
+    <linearGradient id="fill" gradientUnits="userSpaceOnUse" x1="258" y1="20" x2="258" y2="495">
+      <stop offset="0" stop-color="#FF6A45" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#C8183A" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <path d="M258 20 L478 142 L420 213 L297 140 L297 372 L420 292 L478 367 L258 495 L38 367 L98 292 L215 352 L215 140 L98 215 L38 142 Z"
+        fill="url(#fill)" stroke="url(#stroke)" stroke-width="32" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,109 @@
+{
+  "items": {
+    "matrix-5090": {
+      "id": "matrix-5090",
+      "name": "Asus Matrix RTX 5090 gaming PC",
+      "created": "2026-10-15T00:00:00+00:00",
+      "width": 1859,
+      "height": 1450,
+      "alpha": true,
+      "webp": [
+        {
+          "w": 480,
+          "h": 374,
+          "path": "uploads/matrix-5090/matrix-5090-480.webp"
+        },
+        {
+          "w": 800,
+          "h": 624,
+          "path": "uploads/matrix-5090/matrix-5090-800.webp"
+        },
+        {
+          "w": 1200,
+          "h": 936,
+          "path": "uploads/matrix-5090/matrix-5090-1200.webp"
+        }
+      ],
+      "fallback": {
+        "type": "image/png",
+        "variants": [
+          {
+            "w": 800,
+            "h": 624,
+            "path": "uploads/matrix-5090/matrix-5090-800.png"
+          }
+        ]
+      }
+    },
+    "crimson-workstation": {
+      "id": "crimson-workstation",
+      "name": "Crimson Threadripper workstation",
+      "created": "2026-10-15T00:00:00+00:00",
+      "width": 3928,
+      "height": 6120,
+      "alpha": true,
+      "webp": [
+        {
+          "w": 480,
+          "h": 748,
+          "path": "uploads/crimson-workstation/crimson-workstation-480.webp"
+        },
+        {
+          "w": 800,
+          "h": 1246,
+          "path": "uploads/crimson-workstation/crimson-workstation-800.webp"
+        },
+        {
+          "w": 899,
+          "h": 1400,
+          "path": "uploads/crimson-workstation/crimson-workstation-899.webp"
+        }
+      ],
+      "fallback": {
+        "type": "image/png",
+        "variants": [
+          {
+            "w": 800,
+            "h": 1246,
+            "path": "uploads/crimson-workstation/crimson-workstation-800.png"
+          }
+        ]
+      }
+    },
+    "the-incryminator-server": {
+      "id": "the-incryminator-server",
+      "name": "The Incryminator EPYC server",
+      "created": "2026-10-15T00:00:00+00:00",
+      "width": 1681,
+      "height": 1415,
+      "alpha": true,
+      "webp": [
+        {
+          "w": 480,
+          "h": 404,
+          "path": "uploads/the-incryminator-server/the-incryminator-server-480.webp"
+        },
+        {
+          "w": 800,
+          "h": 673,
+          "path": "uploads/the-incryminator-server/the-incryminator-server-800.webp"
+        },
+        {
+          "w": 1200,
+          "h": 1010,
+          "path": "uploads/the-incryminator-server/the-incryminator-server-1200.webp"
+        }
+      ],
+      "fallback": {
+        "type": "image/png",
+        "variants": [
+          {
+            "w": 800,
+            "h": 673,
+            "path": "uploads/the-incryminator-server/the-incryminator-server-800.png"
+          }
+        ]
+      }
+    }
+  }
+}
