@@ -1,28 +1,9 @@
-dist
-dist-*
-cabal-dev
-*.o
-*.hi
-*.hie
-*.chi
-*.chs.h
-*.dyn_o
-*.dyn_hi
-.hpc
-.hsenv
-.cabal-sandbox/
-cabal.sandbox.config
-*.prof
-*.aux
-*.hp
-*.eventlog
-.stack-work/
-cabal.project.local
-cabal.project.local~
-.HTF/
-.ghc.environment.*
 
-# Private config and runtime data
-config.local.php
-storage/*.jsonl
-storage/*.log
+# Admin panel secrets and data (never commit)
+storage/admin.json
+storage/secret.key
+storage/setup-code.txt
+storage/login-attempts.json
+storage/admin-log.txt
+storage/backups/
+storage/*.tmp
